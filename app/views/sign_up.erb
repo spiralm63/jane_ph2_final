@@ -5,21 +5,21 @@
 
   <form id="sign-up" method="post" action="/users">
     <label class="label" for="First Name">First Name</label>
-    <input type="text" name="user[first_name]" placeholder="e.g., John" value="<%= @user.first_name %>">
+    <input type="text" name="user[first_name]" placeholder="e.g., John" value="<%= @user.try(:first_name) %>">
     <span id="name-errors" class="errors"></span>
 
     <label class="label" for="Last Name">Last Name</label>
-    <input type="text" name="user[last_name]" placeholder="e.g., Smith" value="<%= @user.last_name %>">
+    <input type="text" name="user[last_name]" placeholder="e.g., Smith" value="<%= @user.try(:last_name) %>">
     <span id="name-errors" class="errors"></span>
     <br>
 
     <label class="label" for="birthday">Birthday</label>
-    <input type="text" name="user[birthday]" placeholder="e.g., Smith" value="<%= @user.birthday %>">
+    <input type="text" name="user[birthdate]" placeholder="e.g., Smith" value="<%= @user.try(:birthdate) %>">
     <span id="name-errors" class="errors"></span>
     <br>
 
     <label class="label" for="email">Email</label>
-    <input type="email" name="user[email]" placeholder="e.g., me@example.com" value="<%= @user.email %>">
+    <input type="email" name="user[email]" placeholder="e.g., me@example.com" value="<%= @user.try(:email) %>">
     <span id="email-errors" class="errors"></span>
     <br>
 
